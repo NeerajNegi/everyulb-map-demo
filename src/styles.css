@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 .wrapper {
     position: relative;
 }
@@ -16,7 +18,6 @@
     top: 10px;
     right: 10px;
     z-index: 99;
-    background: rebeccapurple;
 }
 
 .map-nav {
@@ -24,5 +25,4 @@
     top: 10px;
     left: 10px;
     z-index: 99;
-    background: saddlebrown;
 }

@@ -1,9 +1,8 @@
-<h1>{{ title }}</h1>
-
 <div class="wrapper">
   <div class="map-canvas">
-    <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-map [latitude]="lat" [longitude]="lng" [zoomControlOptions]="{position: zoomPosition}" [streetViewControlOptions]="{position: streetViewPosition}">
       <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      <agm-info-window>Börk</agm-info-window>
     </agm-map>
   </div>
 
