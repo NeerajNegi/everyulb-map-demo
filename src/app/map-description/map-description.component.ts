@@ -7,7 +7,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapDescriptionComponent implements OnInit {
 
+  cards: Array<any> = [];
+  currentCard: any = {};
+  currentIndex: number = 0;
+
   ngOnInit() {
+    this.cards.push({
+      description: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. 
+      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.`,
+      link: '',
+      imageUrl: 'https://material.angular.io/assets/img/examples/shiba2.jpg'
+    })
+    this.cards.push({
+      description: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. 
+      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.`,
+      link: '',
+      imageUrl: 'https://www.petmd.com/sites/default/files/salmonella-infection-dogs.jpg'
+    })
+    this.cards.push({
+      description: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. 
+      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.`,
+      link: '',
+      imageUrl: 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+    })
+    this.currentCard = this.cards[0];
+  }
+
+  nextCard(): void {
+    this.currentIndex++;
+    if(this.currentIndex < this.cards.length){
+      this.currentCard = this.cards[this.currentIndex];
+    }
+  }
+
+  prevCard(): void {
+    this.currentIndex--;
+    if(this.currentIndex >= 0){
+      this.currentCard = this.cards[this.currentIndex];
+    }
   }
 
 }

@@ -1,11 +1,19 @@
-<div class="wrapper">
-  <div class="map-canvas">
-    <agm-map [latitude]="lat" [longitude]="lng" [zoomControlOptions]="{position: zoomPosition}" [streetViewControlOptions]="{position: streetViewPosition}">
-      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-      <agm-info-window>Börk</agm-info-window>
-    </agm-map>
-  </div>
+<nav class="navbar navbar-dark" style="background-color: rgb(95, 65, 146);">
+  <a class="navbar-brand" href="#">
+   <h4>everyULB</h4>
+  </a>
+</nav>
 
-  <app-map-description class="map-description"></app-map-description>
-  <app-map-navigation class="map-nav"></app-map-navigation>
+<div class="container-fluid">
+  <div class="wrapper">
+    <div class="map-canvas">
+      <agm-map [latitude]="lat" [longitude]="lng" [zoomControlOptions]="{position: zoomPosition}" [streetViewControlOptions]="{position: streetViewPosition}">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+        <agm-info-window>Börk</agm-info-window>
+      </agm-map>
+    </div>
+  
+    <app-map-description class="map-description"></app-map-description>
+    <app-map-navigation class="map-nav"></app-map-navigation>
+  </div>
 </div>
