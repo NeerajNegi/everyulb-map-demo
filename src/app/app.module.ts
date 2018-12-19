@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
+import { AgmCoreModule, GoogleMapsAPIWrapper, KmlLayerManager } from '@agm/core';
 import { MapDescriptionComponent } from './map-description/map-description.component';
 import { MapNavigationComponent } from './map-navigation/map-navigation.component';
 import {MatCardModule} from '@angular/material/card';
@@ -29,7 +29,7 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
     BrowserAnimationsModule,
     NoopAnimationsModule
   ],
-  providers: [GoogleMapsAPIWrapper],
+  providers: [GoogleMapsAPIWrapper, KmlLayerManager],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,9 +7,9 @@
 <div class="container-fluid">
   <div class="wrapper">
     <div class="map-canvas">
-      <agm-map [latitude]="lat" [longitude]="lng" [zoomControlOptions]="{position: zoomPosition}" [streetViewControlOptions]="{position: streetViewPosition}">
+      <agm-map [latitude]="lat" [longitude]="lng" [zoomControlOptions]="{position: zoomPosition}" [streetViewControlOptions]="{position: streetViewPosition}" [zoom]="zoomLevel">
         <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-        <agm-info-window>Börk</agm-info-window>
+        <agm-kml-layer [url]="'https://drive.google.com/uc?authuser=0&id=1nGNb8se4jUOwnvN5pTYTck_iYPfWy_Ic&export=download'"> </agm-kml-layer>
       </agm-map>
     </div>
   

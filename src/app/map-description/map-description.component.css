@@ -13,6 +13,7 @@
   border: none;
   box-shadow: 0 4px 2px -2px gray;
   cursor: pointer;
+  outline: none;
 }
 
 .next {
@@ -25,5 +26,6 @@
   border: none;
   box-shadow: 0 4px 2px -2px gray;
   cursor: pointer;
+  outline: none;
 }
   
