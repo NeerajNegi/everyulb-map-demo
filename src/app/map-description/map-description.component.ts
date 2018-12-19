@@ -34,15 +34,15 @@ export class MapDescriptionComponent implements OnInit {
   }
 
   nextCard(): void {
-    this.currentIndex++;
-    if(this.currentIndex < this.cards.length){
+    if(this.currentIndex < this.cards.length-1){
+      this.currentIndex++;
       this.currentCard = this.cards[this.currentIndex];
     }
   }
 
   prevCard(): void {
-    this.currentIndex--;
-    if(this.currentIndex >= 0){
+    if(this.currentIndex > 0){
+      this.currentIndex--;
       this.currentCard = this.cards[this.currentIndex];
     }
   }
