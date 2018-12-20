@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-map-navigation',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapNavigationComponent implements OnInit {
 
+  @Output() toggleScope = new EventEmitter();
+  @Output() toggleIssues = new EventEmitter();
+  @Output() toggleProposals = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  handleScopeButton(): void {
+    this.toggleScope.emit();
   }
 
 }

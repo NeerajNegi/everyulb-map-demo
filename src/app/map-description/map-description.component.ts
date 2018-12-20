@@ -19,14 +19,12 @@ export class MapDescriptionComponent implements OnInit {
       imageUrl: 'https://material.angular.io/assets/img/examples/shiba2.jpg'
     })
     this.cards.push({
-      description: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. 
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.`,
+      description: `Salmonella infection dogs peels placholder `,
       link: '',
       imageUrl: 'https://www.petmd.com/sites/default/files/salmonella-infection-dogs.jpg'
     })
     this.cards.push({
-      description: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. 
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.`,
+      description: `peels placholder peels placholder peels placholder peels placholder almonella infection dogs`,
       link: '',
       imageUrl: 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
     })

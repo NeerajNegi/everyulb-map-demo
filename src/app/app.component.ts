@@ -15,6 +15,8 @@ export class AppComponent {
   streetViewPosition: google.maps.ControlPosition;
   mapTypeControlPosition: google.maps.ControlPosition;
 
+  showScope: boolean = true;
+
   @ViewChild(AgmMap) map: AgmMap;
 
   constructor(
@@ -35,5 +37,11 @@ export class AppComponent {
   //   });
   //   this.kmlLayerManager.addKmlLayer(ctaLayer);
   // }
+
+  toggleScope(): void {
+    console.log('Scope Toggled');
+    this.showScope = !this.showScope;
+    console.log(this.showScope);
+  }
     
 }
