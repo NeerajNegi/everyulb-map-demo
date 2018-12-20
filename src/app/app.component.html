@@ -25,12 +25,12 @@
           [screenOverlays]='true'> </agm-kml-layer> -->
         <!-- <agm-kml-layer *ngIf="showScope"  [url]="'https://drive.google.com/uc?authuser=0&id=1HsyqZdqqvsTMr8L0vIgoQZVwO_oO6W6O&export=download'"> </agm-kml-layer> -->
         <!-- <agm-kml-layer *ngIf="showScope" [url]="'https://drive.google.com/uc?authuser=0&id=1Kw9wd9hMvYgQULF8f2nzHwCuycnxYIbH&export=download'"> </agm-kml-layer> -->
-        
+
         <agm-kml-layer *ngIf="showScope"  [url]="'https://drive.google.com/uc?authuser=0&id=1ddw5H-QHjZ6pGDKMVkHM-LHLGIwJ-SG4&export=download'"> </agm-kml-layer>
       </agm-map>
     </div>
   
     <app-map-description class="map-description"></app-map-description>
-    <app-map-navigation (toggleScope) = "toggleScope($event)" class="map-nav"></app-map-navigation>
+    <app-map-navigation (toggleScope)="toggleScope()" class="map-nav"></app-map-navigation>
   </div>
 </div>
