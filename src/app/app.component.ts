@@ -13,6 +13,7 @@ export class AppComponent {
   zoomLevel = 16;
   zoomPosition: google.maps.ControlPosition;
   streetViewPosition: google.maps.ControlPosition;
+  mapTypeControlPosition: google.maps.ControlPosition;
 
   @ViewChild(AgmMap) map: AgmMap;
 
@@ -23,6 +24,7 @@ export class AppComponent {
       this.mapsApiLoader.load().then(() => {
         this.zoomPosition = google.maps.ControlPosition.BOTTOM_LEFT;
         this.streetViewPosition = google.maps.ControlPosition.BOTTOM_LEFT;
+        this.mapTypeControlPosition = google.maps.ControlPosition.BOTTOM_LEFT;
       });
     }
   
