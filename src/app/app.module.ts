@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -18,6 +19,30 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ChartsModule } from 'ng2-charts';
 
+const appRoutes: Routes = [
+  {
+    path: 'financials',
+    component: FinancialsComponent
+  },
+  {
+    path: 'summary',
+    component: SummaryComponent
+  },
+  {
+    path: 'methodology',
+    component: MethodologyComponent
+  },
+  {
+    path: '' , 
+    redirectTo: 'summary', 
+    pathMatch: 'full'
+  },
+  {
+    path: '**', 
+    redirectTo: 'summary'
+  }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +59,7 @@ import { ChartsModule } from 'ng2-charts';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAF16wKOlIRqQOAxtvR7Gk2Oobvpb_BfDk'
     }),
+    RouterModule.forRoot(appRoutes),
     MatCardModule,
     MatButtonModule
     ,MatTabsModule,

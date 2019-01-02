@@ -46,3 +46,7 @@
 .nav-links a:hover {
     border-bottom: 6px solid var(--dark);
 }
+
+.active-link {
+    border-bottom: 6px solid var(--dark);
+}

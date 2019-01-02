@@ -4,9 +4,9 @@
   </div>
   <div class="nav-links">
       <ul>
-          <li><a href="#">summary</a></li>
-          <li><a href="#">methodology</a></li>
-          <li><a href="#">financials</a></li>
+          <li><a [routerLink]="['summary']" [ngClass]="{'active-link': currentRoute === 'summary'}">summary</a></li>
+          <li><a [routerLink]="['methodology']" [ngClass]="{'active-link': currentRoute === 'methodology'}">methodology</a></li>
+          <li><a [routerLink]="['financials']" [ngClass]="{'active-link': currentRoute === 'financials'}">financials</a></li>
       </ul>
   </div>
 </header>
