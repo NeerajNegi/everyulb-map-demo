@@ -1,36 +1,4 @@
-<nav class="navbar navbar-dark" style="background-color: rgb(95, 65, 146);">
-  <a class="navbar-brand" href="#">
-   <h4>everyULB</h4>
-  </a>
-</nav>
-
-<div class="container-fluid">
-  <div class="wrapper">
-    <div class="map-canvas">
-      <agm-map 
-        [latitude]="lat" 
-        [longitude]="lng" 
-        [zoomControlOptions]="{position: zoomPosition}" 
-        [streetViewControlOptions]="{position: streetViewPosition}" 
-        [zoom]="zoomLevel" 
-        [mapTypeControl]='true'
-        [mapTypeControlOptions] = "{position: mapTypeControlPosition}">
-        <!-- <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker> -->
-
-        <!-- All kml layers are same. Though extracted from different kmz files-->
-
-        <!-- <agm-kml-layer 
-          *ngIf="showScope" 
-          [url]="'https://drive.google.com/uc?authuser=0&id=1nGNb8se4jUOwnvN5pTYTck_iYPfWy_Ic&export=download'"
-          [screenOverlays]='true'> </agm-kml-layer> -->
-        <!-- <agm-kml-layer *ngIf="showScope"  [url]="'https://drive.google.com/uc?authuser=0&id=1HsyqZdqqvsTMr8L0vIgoQZVwO_oO6W6O&export=download'"> </agm-kml-layer> -->
-        <!-- <agm-kml-layer *ngIf="showScope" [url]="'https://drive.google.com/uc?authuser=0&id=1Kw9wd9hMvYgQULF8f2nzHwCuycnxYIbH&export=download'"> </agm-kml-layer> -->
-
-        <agm-kml-layer *ngIf="showScope"  [url]="'https://drive.google.com/uc?authuser=0&id=1ddw5H-QHjZ6pGDKMVkHM-LHLGIwJ-SG4&export=download'"> </agm-kml-layer>
-      </agm-map>
-    </div>
-  
-    <app-map-description class="map-description"></app-map-description>
-    <app-map-navigation (toggleScope)="toggleScope()" class="map-nav"></app-map-navigation>
-  </div>
-</div>
+<app-header></app-header>
+<!-- <app-summary></app-summary> -->
+<app-financials></app-financials>
+<app-footer></app-footer>

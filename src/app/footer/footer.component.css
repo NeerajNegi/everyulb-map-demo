@@ -1,0 +1,27 @@
+/* footer */
+
+footer {
+    height: 80px;
+    background: var(--dark);
+}
+
+.footer-text {
+    float: right;
+    margin-right: 40px;
+}
+
+.footer-text p {
+    font-size: 0.8rem;
+    font-weight: var(--lightWt);
+    color: rgba(180, 180, 180, 1);
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.footer-text h4 {
+    margin-top: 0;
+    padding-top: 0;
+    font-size: 1.5rem;
+    font-weight: var(--boldWt);
+    color: rgba(180, 180, 180, 1);
+}

@@ -1,0 +1,54 @@
+<section class="financials">
+  <div class="financials-nav">
+      <div class="financials-header">
+          <h4>financials</h4>
+      </div>
+      <div class="cost-dropdown">
+          <h4>complete cost</h4>
+          <button><i class="fas fa-caret-down fa-2x"></i></button>
+      </div>
+      <div class="time">
+          <h4>4 years</h4>
+          <button><i class="fas fa-caret-down fa-2x"></i></button>
+      </div>
+  </div>
+  <div class="financials-breadcrum">
+      <div class="bread">
+          <h4>{{ breadcrum }}</h4>
+      </div>
+      <div class="cost">
+          <h4>476,640.00</h4>
+      </div>
+  </div>
+  <div class="financials-main">
+      <div class="chart">
+        <canvas baseChart width="380" height="380"
+          [data]="pieChartData"
+          [options]="pieChartOptions"
+          [colors]="pieChartColors"
+          [labels]="pieChartLabels"
+          [chartType]="pieChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+      </div>
+      <div class="legend">
+          <div class="legend-title">
+              <ul>
+                  <li *ngFor="let title of legendTitle"><p>{{ title }}</p></li>
+              </ul>
+          </div>
+          <div class="legend-data">
+              <ul>
+                  <li *ngFor="let data of legendData"><p>{{ data | number:'.2' }}</p></li>
+              </ul>
+          </div>
+          <div class="file">
+            <a href="#">OPEN FILE <i class="fas fa-external-link-alt" style="color: #AFAFAF; margin-left: 10px; font-size: 15px"></i></a>
+            <button (click)="toggleDownloadButton()"><i class="fas fa-caret-down fa-2x"></i></button>
+          </div>
+          <div class="download-file" *ngIf="showDownloadButton">
+            <button>download file <i class="fas fa-download"></i> </button>
+          </div>
+      </div>
+  </div>
+</section>

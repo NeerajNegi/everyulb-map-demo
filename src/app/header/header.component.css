@@ -1,0 +1,48 @@
+/* Navigation */
+.nav-header {
+    height: 100px;
+    line-height: 100px;
+    padding: 0;
+    margin: 0;
+    background: var(--dark);
+    color: var(--light);
+}
+.nav-header h1 {
+    font-size: 1.8rem;
+    font-weight: var(--lightWt);
+    /* Right now using fixed margins on left to align nav-header and nav-links vertically  */
+    /* Need to find better way to do this */
+    margin-left: 250px;
+    margin-top: 0;
+}
+
+.nav-links  {
+    background: #F5F5F5;
+    color: var(--dark);
+    height: 60px;
+    line-height: 60px;
+    padding-left: 250px;
+    box-shadow: var(--shadow);
+}
+
+.nav-links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-links a {
+    float: left;
+    display: block;
+    text-align: center;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-weight: var(--regularWt);
+    margin-right: 80px;
+}
+
+.nav-links a:active {
+    border-bottom: 6px solid var(--dark);
+}
+.nav-links a:hover {
+    border-bottom: 6px solid var(--dark);
+}

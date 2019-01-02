@@ -11,12 +11,23 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { FinancialsComponent } from './financials/financials.component';
+import { MethodologyComponent } from './methodology/methodology.component';
+import { SummaryComponent } from './summary/summary.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapDescriptionComponent,
-    MapNavigationComponent
+    MapNavigationComponent,
+    FinancialsComponent,
+    MethodologyComponent,
+    SummaryComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +38,8 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
     MatButtonModule
     ,MatTabsModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    ChartsModule
   ],
   providers: [GoogleMapsAPIWrapper, KmlLayerManager],
   bootstrap: [AppComponent]
