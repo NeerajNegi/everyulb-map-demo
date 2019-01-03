@@ -63,3 +63,13 @@ h4 {
     left: 10px;
     z-index: 99;
 }
+
+/* Modal */
+
+.close {
+    display: none;
+}
+
+.open {
+    display: block;
+}

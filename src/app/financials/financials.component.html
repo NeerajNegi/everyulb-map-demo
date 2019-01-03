@@ -3,20 +3,26 @@
       <div class="financials-header">
           <h4>financials</h4>
       </div>
-      <div class="cost-dropdown">
-          <h4>complete cost</h4>
-          <button><i class="fas fa-caret-down fa-2x"></i></button>
+      <div class="cost">
+            <h4>{{ selectedCost.viewValue }}</h4>
+            <button (click)="toggleCostDropdown()"><i class="fas fa-caret-down fa-2x" ></i></button>
+            <ul class="cost-dropdown" [ngStyle]="{'display': costDisplayValue}">
+                <li *ngFor="let cost of costs" (click)="toggleCostDropdown()">{{ cost.viewValue }}</li>
+            </ul>
       </div>
       <div class="time">
-          <h4>4 years</h4>
-          <button><i class="fas fa-caret-down fa-2x"></i></button>
+          <h4>{{ selectedYear.viewValue }}</h4>
+          <button (click)="toggleYearDropdown()"><i class="fas fa-caret-down fa-2x" ></i></button>
+          <ul class="time-dropdown" [ngStyle]="{'display': yearDisplayValue}">
+              <li *ngFor="let year of years" (click)="toggleYearDropdown()">{{ year.viewValue }}</li>
+          </ul>
       </div>
   </div>
   <div class="financials-breadcrum">
       <div class="bread">
           <h4>{{ breadcrum }}</h4>
       </div>
-      <div class="cost">
+      <div class="cost-data">
           <h4>476,640.00</h4>
       </div>
   </div>

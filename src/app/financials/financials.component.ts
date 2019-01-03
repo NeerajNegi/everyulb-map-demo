@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FinancialsComponent implements OnInit {
 
+  yearDisplayValue: string = 'none';
+  costDisplayValue: string = 'none';
+  selectedYear: any = {};
+  selectedCost: any = {};
   showDownloadButton: boolean = false;
   breadcrum: string = 'Total';
   legendTitle: Array<string> = [
@@ -25,6 +29,18 @@ export class FinancialsComponent implements OnInit {
     1663829.00,
     63829.00,
     4663829.00
+  ]
+
+  years: Array<any> = [
+    {value: 4, viewValue: '4 Years'},
+    {value: 3, viewValue: '3 Years'},
+    {value: 2, viewValue: '2 Years'},
+    {value: 1, viewValue: '1 Years'},
+  ]
+
+  costs: Array<any> = [
+    {value: 'completeCost', viewValue: 'Complete Cost'},
+    {value: 'villageCost', viewValue: 'Village Cost'},
   ]
 
   constructor() { }
@@ -73,10 +89,27 @@ export class FinancialsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.selectedYear = this.years[0];
+    this.selectedCost = this.costs[0];
   }
 
   toggleDownloadButton(): void {
     this.showDownloadButton = !this.showDownloadButton;
   }
+  
+  toggleYearDropdown(): void {
+    if(this.yearDisplayValue === 'none') {
+      this.yearDisplayValue = 'block';
+    } else {
+      this.yearDisplayValue = 'none';
+    }
+  }
 
+  toggleCostDropdown(): void {
+    if(this.costDisplayValue === 'none') {
+      this.costDisplayValue = 'block';
+    } else {
+      this.costDisplayValue = 'none';
+    }
+  }
 }

@@ -9,6 +9,7 @@ import { AgmCoreModule, GoogleMapsAPIWrapper, KmlLayerManager } from '@agm/core'
 import { MapDescriptionComponent } from './map-description/map-description.component';
 import { MapNavigationComponent } from './map-navigation/map-navigation.component';
 import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule, MatDialogRef} from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +19,9 @@ import { SummaryComponent } from './summary/summary.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ChartsModule } from 'ng2-charts';
+import { DetailsOverlayComponent } from './details-overlay/details-overlay.component';
+import { DataService } from './data.service';
+import { MatSelectModule } from '@angular/material/select';
 
 const appRoutes: Routes = [
   {
@@ -38,6 +42,10 @@ const appRoutes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'details-overlay',
+    component: DetailsOverlayComponent
+  },
+  {
     path: '**', 
     redirectTo: 'summary'
   }
@@ -52,7 +60,8 @@ const appRoutes: Routes = [
     MethodologyComponent,
     SummaryComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    DetailsOverlayComponent
   ],
   imports: [
     BrowserModule,
@@ -61,13 +70,15 @@ const appRoutes: Routes = [
     }),
     RouterModule.forRoot(appRoutes),
     MatCardModule,
-    MatButtonModule
-    ,MatTabsModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatTabsModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
-    ChartsModule
+    ChartsModule,
+    MatSelectModule
   ],
-  providers: [GoogleMapsAPIWrapper, KmlLayerManager],
+  providers: [GoogleMapsAPIWrapper, KmlLayerManager, DataService, {provide: MatDialogRef, useValue: {}}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

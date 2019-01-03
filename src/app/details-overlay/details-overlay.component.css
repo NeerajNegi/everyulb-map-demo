@@ -1,0 +1,22 @@
+.modal{
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+    background-color: #ffffff;
+    overflow: auto;
+    z-index: 100;
+}
+
+ .modal-content-wrapper {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+ }
+
+ .close-button {
+     border: none;
+     border-radius: 50%;
+     background: #FFFFFF;
+     color: #707070;
+ }

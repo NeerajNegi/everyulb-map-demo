@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import { DataService } from "../data.service";
+import { DetailsOverlayComponent } from "../details-overlay/details-overlay.component";
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-map-description',
@@ -10,6 +14,9 @@ export class MapDescriptionComponent implements OnInit {
   cards: Array<any> = [];
   currentCard: any = {};
   currentIndex: number = 0;
+
+
+  constructor(public router: Router, private dataService: DataService, public materialDialog: MatDialog) {}
 
   ngOnInit() {
     this.cards.push({
@@ -45,4 +52,13 @@ export class MapDescriptionComponent implements OnInit {
     }
   }
 
+  openDetailsOverlay(): void {
+    let dialogRef = this.materialDialog.open(DetailsOverlayComponent, {
+      width: '100%',
+      height: '100%',
+      data: this.currentCard
+    });
+
+    dialogRef.afterClosed().subscribe(res => console.log(res));
+  }
 }
