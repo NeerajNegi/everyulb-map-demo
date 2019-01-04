@@ -4,17 +4,17 @@
           <h4>financials</h4>
       </div>
       <div class="cost">
-            <h4>{{ selectedCost.viewValue }}</h4>
+            <h4>{{ selectedCost?.viewValue }}</h4>
             <button (click)="toggleCostDropdown()"><i class="fas fa-caret-down fa-2x" ></i></button>
             <ul class="cost-dropdown" [ngStyle]="{'display': costDisplayValue}">
-                <li *ngFor="let cost of costs" (click)="toggleCostDropdown()">{{ cost.viewValue }}</li>
+                <li *ngFor="let cost of costs" (click)="setCost(cost)">{{ cost.viewValue }}</li>
             </ul>
       </div>
       <div class="time">
-          <h4>{{ selectedYear.viewValue }}</h4>
+          <h4>{{ selectedYear?.viewValue }}</h4>
           <button (click)="toggleYearDropdown()"><i class="fas fa-caret-down fa-2x" ></i></button>
           <ul class="time-dropdown" [ngStyle]="{'display': yearDisplayValue}">
-              <li *ngFor="let year of years" (click)="toggleYearDropdown()">{{ year.viewValue }}</li>
+              <li *ngFor="let year of years" (click)="setYear(year)">{{ year.viewValue }}</li>
           </ul>
       </div>
   </div>

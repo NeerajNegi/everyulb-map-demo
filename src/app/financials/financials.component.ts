@@ -112,4 +112,16 @@ export class FinancialsComponent implements OnInit {
       this.costDisplayValue = 'none';
     }
   }
+
+  setYear(year: any): void {
+    this.selectedYear = year;
+    console.log(this.selectedYear);
+    this.toggleYearDropdown();
+  }
+
+  setCost(cost: any): void {
+    this.selectedCost = cost;
+    console.log(this.selectedCost);
+    this.toggleCostDropdown();
+  }
 }
