@@ -40,7 +40,8 @@ export class FinancialsComponent implements OnInit {
 
   costs: Array<any> = [
     {value: 'completeCost', viewValue: 'Complete Cost'},
-    {value: 'villageCost', viewValue: 'Village Cost'},
+    {value: 'villages', viewValue: 'Villages'},
+    {value: 'sources', viewValue: 'Sources'},
   ]
 
   constructor() { }
@@ -123,5 +124,9 @@ export class FinancialsComponent implements OnInit {
     this.selectedCost = cost;
     console.log(this.selectedCost);
     this.toggleCostDropdown();
+  }
+
+  changeChartData(newChartData: any): void {
+    console.log(newChartData);
   }
 }

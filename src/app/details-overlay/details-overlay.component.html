@@ -1,16 +1,21 @@
 <div class="modal">
-  <div class="modal-content-wrapper">
-      <div class="img-container" style="height: 100%;">
+  <div class="modal-content-wrapper" [ngStyle]="{'grid-template-columns': gridTemplateValue}">
+      <div class="img-container">
         <img src={{card.imageUrl}} alt="">
-        </div>
-        <div class="text-container" style="height: 100%; background: green;">
-          <div class="nav-buttons">
-            <button class="close-button"  (click)="hideDetails()">X</button>
+        <button (click)="toggleFullScreenImage()"><i class="fas fa-expand"></i></button>
+      </div>
+      <div class="text-container" [ngStyle]="{'display': textContainerDisplay}">
+        <div class="description">
+          <div class="card-nav">
+            <button class="prev"><i class="fa fa-angle-left"></i></button>
+            <button class="next"><i class="fa fa-angle-right"></i></button>
+            <button class="close-button" (click)="hideDetails()">X</button>
           </div>
-          <div class="description">
-            {{ card.description }}
+          <div class="text">
+              {{ card.description }}
           </div>
         </div>
+      </div>
   </div>
 </div>
 

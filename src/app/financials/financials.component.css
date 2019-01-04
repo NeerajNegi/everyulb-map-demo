@@ -134,6 +134,10 @@
     align-items: center; 
 }
 
+.legend-title li {
+    cursor: pointer;
+}
+
 .legend-data {
     display: flex;
     justify-content: center;

@@ -11,6 +11,8 @@ export class DetailsOverlayComponent implements OnInit {
 
   // displayModal: boolean = false;
   card: any = {};
+  textContainerDisplay: string = 'block';
+  gridTemplateValue: string = '1fr 1fr';
 
   constructor(private dataService: DataService,
     public dialogRef: MatDialogRef<DetailsOverlayComponent>,
@@ -24,6 +26,17 @@ export class DetailsOverlayComponent implements OnInit {
 
   hideDetails(): void {
     this.dialogRef.close('done');
+  }
+
+  toggleFullScreenImage(): void {
+    console.log('toggle fullscreen image');
+    if(this.textContainerDisplay === 'block') {
+      this.textContainerDisplay = 'none';
+      this.gridTemplateValue = '1fr';
+    } else {
+      this.textContainerDisplay = 'block';
+      this.gridTemplateValue = '1fr 1fr';
+    }
   }
 
 }

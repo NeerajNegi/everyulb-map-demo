@@ -40,7 +40,7 @@
       <div class="legend">
           <div class="legend-title">
               <ul>
-                  <li *ngFor="let title of legendTitle"><p>{{ title }}</p></li>
+                  <li *ngFor="let title of legendTitle" (click)="changeChartData(title)"><p>{{ title }}</p></li>
               </ul>
           </div>
           <div class="legend-data">
