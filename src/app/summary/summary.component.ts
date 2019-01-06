@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { GoogleMapsAPIWrapper, KmlLayerManager } from '@agm/core/services'
 import { MapsAPILoader, AgmMap } from '@agm/core';
+import { markers } from '../markers';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-summary',
@@ -11,14 +13,16 @@ export class SummaryComponent implements OnInit {
 
   lat: number = 29.030626; 
   lng: number = 79.387705;
-  zoomLevel = 16;
+  zoomLevel = 14;
   zoomPosition: google.maps.ControlPosition;
   streetViewPosition: google.maps.ControlPosition;
   mapTypeControlPosition: google.maps.ControlPosition;
+  markersData = markers;
 
   showScope: boolean = true;
 
   @ViewChild(AgmMap) map: AgmMap;
+  emitMarkerEvent: Subject<any> = new Subject();
 
   constructor(
     public mapsApiLoader: MapsAPILoader,
@@ -32,7 +36,7 @@ export class SummaryComponent implements OnInit {
     }
 
     ngOnInit(){
-      
+      console.log(markers);
     }
   
   // ngAfterContentInit() {
@@ -47,6 +51,10 @@ export class SummaryComponent implements OnInit {
     console.log('Scope Toggled');
     this.showScope = !this.showScope;
     console.log(this.showScope);
+  }
+
+  markerClicked(markerDetails: any): void {
+    this.emitMarkerEvent.next(markerDetails);
   }
 
 }

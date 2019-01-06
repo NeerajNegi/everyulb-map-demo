@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Router} from '@angular/router';
 import { DataService } from "../data.service";
 import { DetailsOverlayComponent } from "../details-overlay/details-overlay.component";
 import { MatDialog } from '@angular/material';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-map-description',
@@ -14,6 +15,7 @@ export class MapDescriptionComponent implements OnInit {
   cards: Array<any> = [];
   currentCard: any = {};
   currentIndex: number = 0;
+  @Input() markerListener: Subject<any>;
 
 
   constructor(public router: Router, private dataService: DataService, public materialDialog: MatDialog) {}
@@ -36,6 +38,11 @@ export class MapDescriptionComponent implements OnInit {
       imageUrl: 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
     })
     this.currentCard = this.cards[0];
+    
+    this.markerListener.subscribe(e => {
+      console.log(e);
+    })
+
   }
 
   nextCard(): void {
