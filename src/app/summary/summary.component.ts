@@ -20,9 +20,20 @@ export class SummaryComponent implements OnInit {
   markersData = markers;
 
   showScope: boolean = true;
+  showIssues: boolean = true;
+  url: string = "assets/chattarpurVillage.kml";
 
   @ViewChild(AgmMap) map: AgmMap;
   emitMarkerEvent: Subject<any> = new Subject();
+
+  polygons: Array<any> = [
+    {url: 'https://drive.google.com/uc?authuser=0&id=1qET6Sbif_xVD7eR0kaBQFaiKoKpo8iZo&export=download'},
+    {url: 'https://drive.google.com/uc?authuser=0&id=1zSiHgeaeON1DAtIapCfjb9pLs9YY4Oe9&export=download'},
+    {url: 'https://drive.google.com/uc?authuser=0&id=1jU-GhPtN50RS4c6-tzTqr6IocyR7pGP5&export=download'},
+    {url: 'https://drive.google.com/uc?authuser=0&id=1-gfCtT0sAukn8T9EamTXs13e3Z1u3nd&export=download'},
+    {url: 'https://drive.google.com/uc?authuser=0&id=1A7wKSvMtxbJ-K_pUeXrZ3gHciaX94_Sm&export=download'},
+    {url: 'https://drive.google.com/uc?authuser=0&id=12SynwHQrtlKjY71Mt77xpyKwpJRdh_TB&export=download'}
+  ]
 
   constructor(
     public mapsApiLoader: MapsAPILoader,
@@ -51,6 +62,12 @@ export class SummaryComponent implements OnInit {
     console.log('Scope Toggled');
     this.showScope = !this.showScope;
     console.log(this.showScope);
+  }
+
+  toggleIssues(): void {
+    console.log('Issues Toggled');
+    this.showIssues = !this.showIssues;
+    console.log(this.showIssues);
   }
 
   markerClicked(markerDetails: any): void {

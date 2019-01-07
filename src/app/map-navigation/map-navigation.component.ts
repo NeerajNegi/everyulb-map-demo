@@ -20,4 +20,8 @@ export class MapNavigationComponent implements OnInit {
     this.toggleScope.emit();
   }
 
+  handleIssuesButton(): void {
+    this.toggleIssues.emit();
+  }
+
 }

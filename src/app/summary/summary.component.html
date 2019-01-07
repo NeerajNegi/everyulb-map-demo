@@ -9,15 +9,30 @@
         [zoom]="zoomLevel" 
         [mapTypeControl]='true'
         [mapTypeControlOptions] = "{position: mapTypeControlPosition}">
+        
         <agm-marker 
           *ngFor="let marker of markersData" 
           [latitude]="marker.lat" 
           [longitude]="marker.lng"
-          (markerClick)="markerClicked(marker.name)"></agm-marker>
+          [visible]="showIssues"
+          (markerClick)="markerClicked(marker.name)">
+        </agm-marker>
+
+        <!-- <agm-kml-layer *ngIf="showScope"  [url]="'https://drive.google.com/uc?authuser=0&id=1ddw5H-QHjZ6pGDKMVkHM-LHLGIwJ-SG4&export=download'"> </agm-kml-layer> -->
+        
+        <!-- <agm-kml-layer *ngIf="showScope"  [url]="'https://drive.google.com/uc?authuser=0&id=1qET6Sbif_xVD7eR0kaBQFaiKoKpo8iZo&export=download'"> </agm-kml-layer> -->
+        <div *ngIf="showScope">
+          <agm-kml-layer 
+          *ngFor="let polygon of polygons" 
+          [url]="polygon.url"
+          [zIndex]="5"
+          [screenOverlays]="true"></agm-kml-layer>
+        </div>
+
       </agm-map>
     </div>
   
     <app-map-description [markerListener]="emitMarkerEvent" class="map-description"></app-map-description>
-    <app-map-navigation (toggleScope)="toggleScope()" class="map-nav"></app-map-navigation>
+    <app-map-navigation (toggleScope)="toggleScope()" (toggleIssues)="toggleIssues()" class="map-nav"></app-map-navigation>
   </div>
 </div>
