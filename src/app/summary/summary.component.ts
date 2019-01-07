@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { GoogleMapsAPIWrapper, KmlLayerManager } from '@agm/core/services'
 import { MapsAPILoader, AgmMap } from '@agm/core';
 import { markers } from '../markers';
+import { solutionMarkers } from '../solutionMarkers';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -18,9 +19,11 @@ export class SummaryComponent implements OnInit {
   streetViewPosition: google.maps.ControlPosition;
   mapTypeControlPosition: google.maps.ControlPosition;
   markersData = markers;
+  solutionMarkers = solutionMarkers;
 
   showScope: boolean = true;
   showIssues: boolean = true;
+  showSolutions: boolean = true;
   url: string = "assets/chattarpurVillage.kml";
 
   @ViewChild(AgmMap) map: AgmMap;
@@ -62,6 +65,12 @@ export class SummaryComponent implements OnInit {
     console.log('Scope Toggled');
     this.showScope = !this.showScope;
     console.log(this.showScope);
+  }
+
+  toggleSolutions(): void {
+    console.log('Solutions Toggled');
+    this.showSolutions = !this.showSolutions;
+    console.log(this.showSolutions);
   }
 
   toggleIssues(): void {

@@ -9,7 +9,7 @@ export class MapNavigationComponent implements OnInit {
 
   @Output() toggleScope = new EventEmitter();
   @Output() toggleIssues = new EventEmitter();
-  @Output() toggleProposals = new EventEmitter();
+  @Output() toggleSolutions = new EventEmitter();
 
   constructor() { }
 
@@ -22,6 +22,10 @@ export class MapNavigationComponent implements OnInit {
 
   handleIssuesButton(): void {
     this.toggleIssues.emit();
+  }
+
+  handleSolutionsButton(): void {
+    this.toggleSolutions.emit();
   }
 
 }
