@@ -10,6 +10,7 @@
         [mapTypeControl]='true'
         [mapTypeControlOptions] = "{position: mapTypeControlPosition}">
         
+        <!-- Issues Markers -->
         <agm-marker 
           *ngFor="let marker of markersData" 
           [latitude]="marker.lat" 
@@ -18,6 +19,7 @@
           (markerClick)="markerClicked(marker.name)">
         </agm-marker>
 
+        <!-- Solutions Marker -->
         <agm-marker 
           *ngFor="let marker of solutionMarkers" 
           [latitude]="marker.lat" 
@@ -28,7 +30,7 @@
 
         <!-- <agm-kml-layer *ngIf="showScope"  [url]="'https://drive.google.com/uc?authuser=0&id=1ddw5H-QHjZ6pGDKMVkHM-LHLGIwJ-SG4&export=download'"> </agm-kml-layer> -->
         
-        <!-- <agm-kml-layer *ngIf="showScope"  [url]="'https://drive.google.com/uc?authuser=0&id=1qET6Sbif_xVD7eR0kaBQFaiKoKpo8iZo&export=download'"> </agm-kml-layer> -->
+        <!-- Scope KML Layers -->
         <div *ngIf="showScope">
           <agm-kml-layer 
           *ngFor="let polygon of polygons" 
@@ -36,11 +38,10 @@
           [zIndex]="5"
           [screenOverlays]="true"></agm-kml-layer>
         </div>
-
       </agm-map>
     </div>
   
     <app-map-description [markerListener]="emitMarkerEvent" class="map-description"></app-map-description>
-    <app-map-navigation (toggleScope)="toggleScope()" (toggleIssues)="toggleIssues()"  (toggleSolutions)="toggleSolutions()" class="map-nav"></app-map-navigation>
+    <app-map-navigation (toggleScope)="toggleScope()" (toggleIssues)="toggleIssues()" (toggleSolutions)="toggleSolutions()" class="map-nav"></app-map-navigation>
   </div>
 </div>
