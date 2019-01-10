@@ -1,5 +1,20 @@
 <app-header></app-header>
-<!-- <app-summary></app-summary>
-<app-financials></app-financials> -->
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
+<div class="nav-links">
+    <ul>
+        <li><a (click)="scroll(summary, summary)" class="active-link">summary</a></li>
+        <li><a (click)="scroll(methodology, methodology)">methodology</a></li>
+        <li><a (click)="scroll(financials, financials)" >financials</a></li>
+    </ul>
+</div>
+<div #summary>
+    <app-summary></app-summary>
+</div>
+<div #methodology>
+    <app-methodology ></app-methodology>
+</div>
+<div #financials>
+    <app-financials></app-financials>
+</div>
+
 <app-footer></app-footer>
