@@ -4,6 +4,7 @@ import { DataService } from "../data.service";
 import { DetailsOverlayComponent } from "../details-overlay/details-overlay.component";
 import { MatDialog } from '@angular/material';
 import { Subject } from 'rxjs';
+import { markers } from '../markers';
 
 @Component({
   selector: 'app-map-description',
@@ -16,31 +17,18 @@ export class MapDescriptionComponent implements OnInit {
   currentCard: any = {};
   currentIndex: number = 0;
   @Input() markerListener: Subject<any>;
+  markersData = markers;
 
 
   constructor(public router: Router, private dataService: DataService, public materialDialog: MatDialog) {}
 
   ngOnInit() {
-    this.cards.push({
-      description: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. 
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.`,
-      link: '',
-      imageUrl: 'https://material.angular.io/assets/img/examples/shiba2.jpg'
-    })
-    this.cards.push({
-      description: `Salmonella infection dogs peels placholder `,
-      link: '',
-      imageUrl: 'https://www.petmd.com/sites/default/files/salmonella-infection-dogs.jpg'
-    })
-    this.cards.push({
-      description: `peels placholder peels placholder peels placholder peels placholder almonella infection dogs`,
-      link: '',
-      imageUrl: 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
-    })
+    this.cards = this.markersData.map(m => m);
     this.currentCard = this.cards[0];
     
     this.markerListener.subscribe(e => {
       console.log(e);
+      this.currentCard = e;
     })
 
   }
