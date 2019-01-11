@@ -22,6 +22,7 @@ import { ChartsModule } from 'ng2-charts';
 import { DetailsOverlayComponent } from './details-overlay/details-overlay.component';
 import { DataService } from './data.service';
 import { MatSelectModule } from '@angular/material/select';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 const appRoutes: Routes = [
   {
@@ -76,7 +77,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     NoopAnimationsModule,
     ChartsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTooltipModule
   ],
   providers: [GoogleMapsAPIWrapper, KmlLayerManager, DataService, {provide: MatDialogRef, useValue: {}}],
   bootstrap: [AppComponent]

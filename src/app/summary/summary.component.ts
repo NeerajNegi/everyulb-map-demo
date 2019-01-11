@@ -14,6 +14,8 @@ export class SummaryComponent implements OnInit {
 
   lat: number = 29.030626; 
   lng: number = 79.387705;
+  solutionsIcon = "/assets/icons/solution.svg";
+  issuesIcon = "/assets/icons/issues.svg";
   zoomLevel = 14;
   zoomPosition: google.maps.ControlPosition;
   streetViewPosition: google.maps.ControlPosition;

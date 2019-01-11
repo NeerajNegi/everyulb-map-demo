@@ -11,6 +11,8 @@ export class MapNavigationComponent implements OnInit {
   @Output() toggleIssues = new EventEmitter();
   @Output() toggleSolutions = new EventEmitter();
 
+  tooltipPosition: string = 'right';
+
   constructor() { }
 
   ngOnInit() {

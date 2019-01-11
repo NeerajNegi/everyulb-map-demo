@@ -1,5 +1,7 @@
 <div class="btn-group">
-    <button mat-raised-button color="primary" class="sticky-btn" (click)="handleScopeButton()">SCOPE</button>
-    <button mat-raised-button color="warn" class="sticky-btn" (click)="handleIssuesButton()">ISSUES</button>
-    <button mat-raised-button class="sticky-btn" (click)="handleSolutionsButton()">PROPOSALS</button>
+    <button (click)="handleScopeButton()" matTooltip="Toggle Scope" [matTooltipPosition]="tooltipPosition"><img src="/assets/icons/scope.svg"></button>
+    <hr>
+    <button (click)="handleIssuesButton()" matTooltip="Toggle Issues" [matTooltipPosition]="tooltipPosition"><img src="/assets/icons/issues.svg"></button>
+    <hr>
+    <button (click)="handleSolutionsButton()" matTooltip="Toggle Proposals" [matTooltipPosition]="tooltipPosition"><img src="/assets/icons/solution.svg"></button>
 </div>

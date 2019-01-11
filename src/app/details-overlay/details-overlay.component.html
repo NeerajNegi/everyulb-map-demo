@@ -1,7 +1,7 @@
 <div class="modal">
   <div class="modal-content-wrapper" [ngStyle]="{'grid-template-columns': gridTemplateValue}">
       <div class="img-container">
-        <img src={{card.imageUrl}} alt="">
+        <img src={{card.image}} alt="">
         <button (click)="toggleFullScreenImage()"><i class="fas fa-expand"></i></button>
       </div>
       <div class="text-container" [ngStyle]="{'display': textContainerDisplay}">
@@ -12,7 +12,7 @@
             <button class="close-button" (click)="hideDetails()"><i class="fa fa-times"></i></button>
           </div>
           <div class="text">
-              {{ card.description }}
+              {{ card.name }}
           </div>
         </div>
       </div>
