@@ -20,6 +20,7 @@
     text-transform: uppercase;
     font-weight: var(--regularWt);
     margin-right: 80px;
+    cursor: pointer;
 }
 
 .nav-links a:active {

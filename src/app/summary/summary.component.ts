@@ -22,6 +22,7 @@ export class SummaryComponent implements OnInit {
   mapTypeControlPosition: google.maps.ControlPosition;
   markersData = markers;
   solutionMarkers = solutionMarkers;
+  solutionClusterImage = "/assets/icons/proposals/proposals.png";
 
   showScope: boolean = true;
   showIssues: boolean = true;
@@ -39,6 +40,18 @@ export class SummaryComponent implements OnInit {
     {url: 'https://drive.google.com/uc?authuser=0&id=1A7wKSvMtxbJ-K_pUeXrZ3gHciaX94_Sm&export=download'},
     {url: 'https://drive.google.com/uc?authuser=0&id=12SynwHQrtlKjY71Mt77xpyKwpJRdh_TB&export=download'}
   ]
+
+  public mapStyles = [
+    {
+    "featureType": "poi",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+      ]
+    }
+  ];
 
   constructor(
     public mapsApiLoader: MapsAPILoader,

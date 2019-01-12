@@ -23,6 +23,7 @@ import { DetailsOverlayComponent } from './details-overlay/details-overlay.compo
 import { DataService } from './data.service';
 import { MatSelectModule } from '@angular/material/select';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
 
 const appRoutes: Routes = [
   {
@@ -78,7 +79,8 @@ const appRoutes: Routes = [
     NoopAnimationsModule,
     ChartsModule,
     MatSelectModule,
-    MatTooltipModule
+    MatTooltipModule,
+    AgmJsMarkerClustererModule
   ],
   providers: [GoogleMapsAPIWrapper, KmlLayerManager, DataService, {provide: MatDialogRef, useValue: {}}],
   bootstrap: [AppComponent]

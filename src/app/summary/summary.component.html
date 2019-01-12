@@ -8,8 +8,9 @@
         [streetViewControlOptions]="{position: streetViewPosition}" 
         [zoom]="zoomLevel" 
         [mapTypeControl]='true'
-        [mapTypeControlOptions] = "{position: mapTypeControlPosition}">
-        
+        [mapTypeControlOptions] = "{position: mapTypeControlPosition}"
+        [styles]="mapStyles">
+
         <!-- Issues Markers -->
         <agm-marker 
           *ngFor="let marker of markersData" 
@@ -20,15 +21,16 @@
           (markerClick)="markerClicked(marker)">
         </agm-marker>
 
+      <agm-marker-cluster *ngIf="showSolutions" imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
         <!-- Solutions Marker -->
         <agm-marker 
           *ngFor="let marker of solutionMarkers" 
           [latitude]="marker.lat" 
           [longitude]="marker.lng"
           [visible]="showSolutions"
-          [iconUrl]="solutionsIcon"
-          (markerClick)="markerClicked(marker.name)">
+          [iconUrl]="solutionsIcon">
         </agm-marker>
+        </agm-marker-cluster>
 
         <!-- <agm-kml-layer *ngIf="showScope"  [url]="'https://drive.google.com/uc?authuser=0&id=1ddw5H-QHjZ6pGDKMVkHM-LHLGIwJ-SG4&export=download'"> </agm-kml-layer> -->
         
