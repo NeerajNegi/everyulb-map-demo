@@ -27,7 +27,6 @@ export class SummaryComponent implements OnInit {
   showScope: boolean = true;
   showIssues: boolean = true;
   showSolutions: boolean = true;
-  url: string = "assets/chattarpurVillage.kml";
 
   @ViewChild(AgmMap) map: AgmMap;
   emitMarkerEvent: Subject<any> = new Subject();

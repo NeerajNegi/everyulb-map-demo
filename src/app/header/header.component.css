@@ -12,7 +12,7 @@
     font-weight: var(--lightWt);
     /* Right now using fixed margins on left to align nav-header and nav-links vertically  */
     /* Need to find better way to do this */
-    margin-left: 250px;
+    margin-left: 10%;
     margin-top: 0;
 }
 

@@ -3,7 +3,7 @@
     color: var(--dark);
     height: 60px;
     line-height: 60px;
-    padding-left: 250px;
+    padding-left: 10%;
     box-shadow: var(--shadow);
 }
 
