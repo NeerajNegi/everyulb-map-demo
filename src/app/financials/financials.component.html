@@ -1,60 +1,69 @@
 <section class="financials">
-  <div class="financials-nav">
-      <div class="financials-header">
-          <h4>financials</h4>
-      </div>
-      <div class="cost">
-            <h4>{{ selectedCost?.viewValue }}</h4>
-            <button (click)="toggleCostDropdown()"><i class="fas fa-caret-down fa-2x" ></i></button>
-            <ul class="cost-dropdown" [ngStyle]="{'display': costDisplayValue}">
-                <li *ngFor="let cost of costs" (click)="setCost(cost)">{{ cost.viewValue }}</li>
+    <div class="financials-nav">
+        <div class="financials-header">
+            <h4>financials</h4>
+        </div>
+        <div class="cost">
+                <h4>{{ selectedCost?.viewValue }}</h4>
+                <button (click)="toggleCostDropdown()"><i class="fas fa-caret-down fa-2x" ></i></button>
+                <ul class="cost-dropdown" [ngStyle]="{'display': costDisplayValue}">
+                    <li *ngFor="let cost of costs" (click)="setCost(cost)" style="cursor: pointer;">{{ cost.viewValue }}</li>
+                </ul>
+        </div>
+        <div class="time">
+            <h4>{{ selectedYear?.viewValue }}</h4>
+            <button (click)="toggleYearDropdown()"><i class="fas fa-caret-down fa-2x" ></i></button>
+            <ul class="time-dropdown" [ngStyle]="{'display': yearDisplayValue}">
+                <li *ngFor="let year of years" (click)="setYear(year)" style="cursor: pointer;">{{ year.viewValue }}</li>
             </ul>
-      </div>
-      <div class="time">
-          <h4>{{ selectedYear?.viewValue }}</h4>
-          <button (click)="toggleYearDropdown()"><i class="fas fa-caret-down fa-2x" ></i></button>
-          <ul class="time-dropdown" [ngStyle]="{'display': yearDisplayValue}">
-              <li *ngFor="let year of years" (click)="setYear(year)">{{ year.viewValue }}</li>
-          </ul>
-      </div>
-  </div>
-  <div class="financials-breadcrum">
-      <div class="bread">
-          <h4>{{ breadcrum }}</h4>
-      </div>
-      <div class="cost-data">
-          <h4>476,640.00</h4>
-      </div>
-  </div>
-  <div class="financials-main">
-      <div class="chart">
-        <canvas baseChart width="250" height="250"
-          [data]="pieChartData"
-          [options]="pieChartOptions"
-          [colors]="pieChartColors"
-          [labels]="pieChartLabels"
-          [chartType]="pieChartType"
-          (chartHover)="chartHovered($event)"
-          (chartClick)="chartClicked($event)"></canvas>
-      </div>
-      <div class="legend">
-          <div class="legend-title">
-              <ul>
-                  <li *ngFor="let title of legendTitle" (click)="changeChartData(title)"><p>{{ title }}</p></li>
-              </ul>
-          </div>
-          <div class="legend-data">
-              <ul>
-                  <li *ngFor="let data of legendData"><p>{{ data | number:'.2' }}</p></li>
-              </ul>
-          </div>
-          <div class="file">
-            <a href="#">OPEN FILE <i class="fas fa-external-link-alt" style="color: #AFAFAF; margin-left: 10px; font-size: 15px"></i></a>
-            <button (click)="toggleDownloadButton()"><i class="fas fa-caret-down fa-2x"></i></button>
-          </div>
-          <div class="download-file" *ngIf="showDownloadButton">
-            <button>download file <i class="fas fa-download"></i> </button>
-          </div>
-      </div>
-  </div>
+        </div>
+    </div>
+    <div class="financials-breadcrum">
+        <div class="bread" style="cursor: pointer;">
+                <span *ngIf="breadcrum == 'Total'"><h4> {{breadcrum}} </h4>  </span>
+                <span *ngIf="breadcrum != 'Total'" (click)="callPieData()"><h4> {{breadcrum}} </h4>  </span>
+        </div>
+        <div class="cost-data">
+            <h4>476,640.00</h4>
+        </div>
+    </div>
+    <div class="financials-main">
+        <div class="chart" *ngIf="!showChart2">
+            <canvas baseChart width="300" height="300"
+            [data]="pieChartData"
+            [options]="pieChartOptions"
+            [colors]="pieChartColors"
+            [labels]="firstChartLabel"
+            [chartType]="pieChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+        </div>
+        <div class="chart" *ngIf="showChart2">
+                <canvas baseChart width="380" height="380"
+                [data]="pieChartData"
+                [options]="pieChartOptions"
+                [colors]="pieChartColors"
+                [labels]="secondChartLabel"
+                [chartType]="pieChartType"></canvas>
+            </div>
+        <div class="legend">
+            <div class="legend-title">
+                <ul>
+                    <li *ngFor="let title of legendTitle" (click)="changeChartData(title)"><p>{{ title }}</p></li>
+                </ul>
+            </div>
+            <div class="legend-data">
+                <ul>
+                    <li *ngFor="let data of legendData"><p>{{ data | number:'.2' }}</p></li>
+                </ul>
+            </div>
+            <div class="file">
+                <a href="#">OPEN FILE <i class="fas fa-external-link-alt" style="color: #AFAFAF; margin-left: 10px; font-size: 15px"></i></a>
+                <button (click)="toggleDownloadButton()"><i class="fas fa-caret-down fa-2x"></i></button>
+            </div>
+            <div class="download-file" *ngIf="showDownloadButton">
+                <button>download file <i class="fas fa-download"></i> </button>
+            </div>
+        </div>
+    </div>
 </section>

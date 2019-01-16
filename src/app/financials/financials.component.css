@@ -124,9 +124,9 @@
     color: var(--dark);
 }
 
-.legend-title p::first-letter {
+/* .legend-title p::first-letter {
     font-weight: var(--boldWt);
-}
+} */
 
 .legend-title {
     display: flex;
